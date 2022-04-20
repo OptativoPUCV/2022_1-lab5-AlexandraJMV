@@ -152,15 +152,24 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     }
 
     //Nodo con mas hijos, paja.
-
-/*
-
-Reemplace los datos (key,value) de *node* con los del
- nodo "minimum". Elimine el nodo minimum (para hacerlo 
- puede usar la misma función *removeNode*).
-*/
-    if (node == tree->root) return;
     aux_node = minimum(node->right);
+    if(node == tree->root)
+    {
+        node->left->parent = aux_node;
+        node->right->parent = aux_node;
+
+        aux_node->parent->left = aux_node->right;
+        if (aux_node->right != NULL)
+            aux_node->right->parent = aux_node->parent;
+
+        aux_node->parent = NULL;
+
+        aux_node->left = node->left;
+        aux_node->right = node->right;
+
+        free(node);
+        return;
+        
     if(node->parent->left == node)
     {
         node->parent->left = aux_node;

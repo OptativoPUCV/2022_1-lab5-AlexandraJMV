@@ -186,3 +186,20 @@ mi., 20 de abr. de 2022 14:49:38:
  tests:  17|4
 total_score: 35/70
 9ff3035
+mi., 20 de abr. de 2022 14:56:32: 
+ treemap.c | 23 ++++++++++++++++-------
+ 1 file changed, 16 insertions(+), 7 deletions(-)
+test.c: In function 'removeNode':
+test.c:503:5: error: 'main' is normally a non-static function [-Werror=main]
+ int main( int argc, char *argv[] ) {
+     ^~~~
+test.c:606:1: error: expected declaration or statement at end of input
+ }
+ ^
+At top level:
+test.c:503:5: error: 'main' defined but not used [-Werror=unused-function]
+ int main( int argc, char *argv[] ) {
+     ^~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+afff1dd
