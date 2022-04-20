@@ -113,3 +113,23 @@ treemap.c:127:9: error: suggest parentheses around assignment used as truth valu
 cc1.exe: all warnings being treated as errors
 Compilation failed
 7c2abf7
+mi., 20 de abr. de 2022 14:23:59: 
+ treemap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:4:0:
+treemap.c: In function 'removeNode':
+treemap.c:100:34: error: comparison between pointer and integer [-Werror]
+     if(node->left == node->right == NULL)
+                                  ^~
+treemap.c:100:19: error: suggest parentheses around comparison in operand of '==' [-Werror=parentheses]
+     if(node->left == node->right == NULL)
+        ~~~~~~~~~~~^~~~~~~~~~~~~~
+treemap.c:102:9: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+         if (node->parent->left = node)
+         ^~
+treemap.c:108:9: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+         if (node->parent->right = node)
+         ^~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+437bcbf
