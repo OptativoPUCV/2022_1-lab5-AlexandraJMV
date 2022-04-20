@@ -175,3 +175,8 @@ mi., 20 de abr. de 2022 14:30:01:
  tests:  17|4
 total_score: 35/70
 cc4131b
+mi., 20 de abr. de 2022 14:47:17: 
+ treemap.c | 28 +++++++++++++++++++++++++++-
+ 1 file changed, 27 insertions(+), 1 deletion(-)
+ tests:  0|0
+325a9fa

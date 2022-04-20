@@ -96,6 +96,9 @@ TreeNode * minimum(TreeNode * x){
 
 
 void removeNode(TreeMap * tree, TreeNode* node) {
+    TreeNode * aux_node;
+
+
     // Nodo sin hijos.
     if(node->left == NULL && node->right == NULL)
     {
@@ -148,7 +151,30 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         }
     }
 
-    //Nodo con mas hijos 
+    //Nodo con mas hijos, paja.
+
+/*
+
+Reemplace los datos (key,value) de *node* con los del
+ nodo "minimum". Elimine el nodo minimum (para hacerlo 
+ puede usar la misma función *removeNode*).
+*/
+
+    aux_node = minimum(node->right);
+    if(node->parent->left == node)
+    {
+        node->parent->left = aux_node;
+        aux_node->parent->left = aux_node->right;
+        if (aux_node->right != NULL)
+            aux_node->right->parent = aux_node->parent;
+        aux_node->parent = node->parent;
+
+        aux_node->left = node->left;
+        node->left->parent = aux_node;
+
+        free(node);
+        return;
+    }
     return;
 }
 
