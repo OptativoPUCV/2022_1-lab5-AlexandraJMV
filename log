@@ -147,3 +147,9 @@ treemap.c:100:19: error: suggest parentheses around comparison in operand of '==
 cc1.exe: all warnings being treated as errors
 Compilation failed
 70fed43
+mi., 20 de abr. de 2022 14:24:51: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  16|4
+total_score: 30/70
+ae85fcc
