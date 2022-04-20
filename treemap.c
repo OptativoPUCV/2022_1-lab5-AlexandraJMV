@@ -197,7 +197,6 @@ void removeNode(TreeMap * tree, TreeNode* node) {
 
         return;
     }
-    if(nextTreeMap)
 
 
 }
