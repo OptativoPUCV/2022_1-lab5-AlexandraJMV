@@ -40,3 +40,9 @@ treemap.c:22:5: note: declared here
      ^~~~~~~~
 Compilation failed
 5fec845
+mi., 20 de abr. de 2022 10:08:19: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  11|6
+total_score: 15/70
+b626746
