@@ -159,7 +159,7 @@ Reemplace los datos (key,value) de *node* con los del
  nodo "minimum". Elimine el nodo minimum (para hacerlo 
  puede usar la misma función *removeNode*).
 */
-
+    if (node == tree->root) return;
     aux_node = minimum(node->right);
     if(node->parent->left == node)
     {
