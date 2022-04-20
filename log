@@ -90,3 +90,26 @@ treemap.c:99:16: error: unused variable 'aux' [-Werror=unused-variable]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 954ca4b
+mi., 20 de abr. de 2022 14:23:24: 
+ treemap.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+In file included from test.c:4:0:
+treemap.c: In function 'removeNode':
+treemap.c:100:5: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+     if(node->left = node->right = NULL)
+     ^~
+treemap.c:102:9: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+         if (node->parent->left = node)
+         ^~
+treemap.c:108:9: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+         if (node->parent->right = node)
+         ^~
+treemap.c:118:9: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+         if(node->parent->left = node)
+         ^~
+treemap.c:127:9: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+         if(node->parent->right = node)
+         ^~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+7c2abf7
