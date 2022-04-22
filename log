@@ -455,3 +455,9 @@ treemap.c:308:17: error: 'TreeMap {aka struct TreeMap}' has no member named 'cur
                  ^~
 Compilation failed
 eaee40b
+vi., 22 de abr. de 2022 14:44:02: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  28|1
+total_score: 65/70
+4622990

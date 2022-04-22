@@ -305,7 +305,7 @@ Pair * nextTreeMap(TreeMap * tree) {
         else if (tree->current->parent->left == tree->current) 
         {
             next = tree->current->parent;
-            tree->curreSnt = next;
+            tree->current = next;
         }
         else
         {
