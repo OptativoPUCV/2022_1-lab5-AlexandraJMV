@@ -285,7 +285,9 @@ Pair * upperBound(TreeMap * tree, void* key) {
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
-    return minimum(tree->root)->pair;
+    tree->current = minimum(tree->root);
+    if (tree->current == NULL) return NULL;
+    return tree->current->pair;
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
