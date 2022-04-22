@@ -265,14 +265,14 @@ Pair * upperBound(TreeMap * tree, void* key) {
         else
         {
             if(tree->current->right == NULL)
-                break;
+                break;S
             tree->current = tree->current->right;
+            ub_node = tree->current;
         }
     }
     if (tree->current == NULL) return NULL;
     
-    return tree->current->pair;
-}
+    return ub_node->pair;
 
 Pair * firstTreeMap(TreeMap * tree) {
     TreeNode * first;
