@@ -259,29 +259,32 @@ Pair * nextTreeMap(TreeMap * tree) {
     if(tree->current->right != NULL)
     {
         next = minimum(tree->current->right);
+        tree->current = next;
     }
     else 
     {
         if(tree->current->parent == NULL)
-            next = NULL;
+        {
+            tree->current = NULL;
+            return NULL;
+        }
         else if (tree->current->parent->left == tree->current) 
         {
             next = tree->current->parent;
+            tree->current = next;
         }
         else
         {
             while(tree->current->parent != NULL && tree->lower_than(tree->current->pair->key, tree->current->parent->pair->key) != 1)
             {
-                next = tree->current->parent;
                 tree->current = next;
-
-                if(next == NULL) return NULL;
             }
+
+            next = tree->current->parent;
+            tree->current = next;
         }
         
     }
-
-    tree->current = next;
 
     if (next == NULL) return NULL;
 

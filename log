@@ -333,3 +333,14 @@ vi., 22 de abr. de 2022 11:57:16:
  tests:  23|2
 total_score: 50/70
 ddfe4ec
+vi., 22 de abr. de 2022 12:04:36: 
+ treemap.c | 15 +++++++++------
+ 1 file changed, 9 insertions(+), 6 deletions(-)
+In file included from test.c:4:0:
+test.c: In function 'nextTreeMap':
+treemap.c:280:31: error: 'next' may be used uninitialized in this function [-Werror=maybe-uninitialized]
+                 tree->current = next;
+                 ~~~~~~~~~~~~~~^~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+d0ab4f7
