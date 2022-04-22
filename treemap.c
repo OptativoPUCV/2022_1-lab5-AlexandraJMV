@@ -263,7 +263,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     else 
     {
         if(tree->current->parent != NULL)
-            next = tree->current->parent;
+            next = minimum(tree->current->parent);
         next = NULL;
     }
 
