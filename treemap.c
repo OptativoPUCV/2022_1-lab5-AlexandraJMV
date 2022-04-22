@@ -301,13 +301,11 @@ Pair * nextTreeMap(TreeMap * tree) {
     {
         if(tree->current->parent == NULL)
         {
-            tree->current = NULL;
-            return NULL;
+            next = NULL;
         }
         else if (tree->current->parent->left == tree->current) 
         {
             next = tree->current->parent;
-            tree->current = next;
         }
         else
         {
@@ -317,10 +315,11 @@ Pair * nextTreeMap(TreeMap * tree) {
             }
 
             next = tree->current->parent;
-            tree->current = next;
         }
         
     }
+    
+    tree->current = next;
 
     if (next == NULL) return NULL;
 
