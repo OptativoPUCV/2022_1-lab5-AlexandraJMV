@@ -277,7 +277,7 @@ Pair * nextTreeMap(TreeMap * tree) {
         {
             while(tree->current->parent != NULL && tree->lower_than(tree->current->pair->key, tree->current->parent->pair->key) != 1)
             {
-                tree->current = next;
+                tree->current = tree->current->parent;
             }
 
             next = tree->current->parent;

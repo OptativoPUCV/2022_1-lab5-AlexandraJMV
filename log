@@ -344,3 +344,9 @@ treemap.c:280:31: error: 'next' may be used uninitialized in this function [-Wer
 cc1.exe: all warnings being treated as errors
 Compilation failed
 d0ab4f7
+vi., 22 de abr. de 2022 12:05:14: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  25|1
+total_score: 60/70
+0be29ae
