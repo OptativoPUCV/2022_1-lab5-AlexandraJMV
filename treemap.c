@@ -285,10 +285,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
-    TreeNode * first;
-    first = minimum(tree->root);
-    tree->current = first;
-    return tree->current->pair;
+    return minimum(tree->root)->pair;
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
@@ -308,7 +305,7 @@ Pair * nextTreeMap(TreeMap * tree) {
         else if (tree->current->parent->left == tree->current) 
         {
             next = tree->current->parent;
-            tree->current = next;
+            tree->curreSnt = next;
         }
         else
         {

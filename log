@@ -445,3 +445,13 @@ vi., 22 de abr. de 2022 14:29:55:
  tests:  28|1
 total_score: 65/70
 61ee91c
+vi., 22 de abr. de 2022 14:43:50: 
+ treemap.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
+In file included from test.c:4:0:
+treemap.c: In function 'nextTreeMap':
+treemap.c:308:17: error: 'TreeMap {aka struct TreeMap}' has no member named 'curreSnt'; did you mean 'current'?
+             tree->curreSnt = next;
+                 ^~
+Compilation failed
+eaee40b
