@@ -270,3 +270,14 @@ vi., 22 de abr. de 2022 11:15:58:
  tests:  20|2
 total_score: 45/70
 397967d
+vi., 22 de abr. de 2022 11:22:20: 
+ treemap.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+In file included from test.c:4:0:
+treemap.c: In function 'nextTreeMap':
+treemap.c:257:16: error: unused variable 'next' [-Werror=unused-variable]
+     TreeNode * next;
+                ^~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+7ee0fac
