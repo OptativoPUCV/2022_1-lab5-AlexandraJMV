@@ -262,9 +262,21 @@ Pair * nextTreeMap(TreeMap * tree) {
     }
     else 
     {
-        if(tree->current->parent != NULL && tree->current->parent->right != NULL)
-            next = minimum(tree->current->parent->right);
-        else next = tree->current->parent;
+        if(tree->current->parent == NULL)
+            next = NULL;
+        else if (tree->current->parent->left == tree->current) 
+        {
+            next = tree->current->parent;
+        }
+        else
+        {
+            while(tree->lower_than(tree->current->pair->key, tree->current->parent->pair->key) != 1)
+            {
+                next = tree->current->parent;
+                tree->current = next;
+            }
+        }
+        
     }
 
     tree->current = next;
