@@ -284,7 +284,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
     }
 
     if (cont_left == 0)
-        return tree->current->pair;
+        return NULL;
     return ub_node->pair;
 }
 
