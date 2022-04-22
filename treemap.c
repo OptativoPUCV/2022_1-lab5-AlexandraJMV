@@ -262,9 +262,9 @@ Pair * nextTreeMap(TreeMap * tree) {
     }
     else 
     {
-        if(tree->current->parent != NULL)
-            next = minimum(tree->current->parent);
-        next = NULL;
+        if(tree->current->parent != NULL && tree->current->parent->right != NULL)
+            next = minimum(tree->current->parent->right);
+        else next = tree->current->parent;
     }
 
     tree->current = next;
