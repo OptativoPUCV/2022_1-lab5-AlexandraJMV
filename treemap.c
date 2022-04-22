@@ -254,7 +254,7 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-    TreeNode * next;
+
 
     return NULL;
 }
