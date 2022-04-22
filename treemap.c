@@ -256,7 +256,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
         if (is_equal(tree, key, tree->current->pair->key) == 1)
         {
             ub_node = tree->current;
-            return ub_node->pair;
+            break;
         }
         else if (tree->lower_than(key, tree->current->pair->key) == 1 )
         {
@@ -273,6 +273,8 @@ Pair * upperBound(TreeMap * tree, void* key) {
             ub_node = tree->current;
         }
     }
+
+    return ub_node->pair;
 }
 
 Pair * firstTreeMap(TreeMap * tree) {
