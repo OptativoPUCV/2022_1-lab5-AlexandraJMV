@@ -416,3 +416,14 @@ test.c:503:5: error: 'main' defined but not used [-Werror=unused-function]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 a959125
+vi., 22 de abr. de 2022 14:02:02: 
+ treemap.c | 11 +++++------
+ 1 file changed, 5 insertions(+), 6 deletions(-)
+In file included from test.c:4:0:
+treemap.c: In function 'upperBound':
+treemap.c:276:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+41aae4a
