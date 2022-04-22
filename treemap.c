@@ -106,7 +106,6 @@ void removeNode(TreeMap * tree, TreeNode* node) {
             tree->root = NULL;
             tree->current = NULL;
             free(node);
-
             return;
         }
         if (node->parent->left == node)
@@ -180,25 +179,37 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     //Nodo con mas hijos, paja.
     a_node = minimum(node->right);
 
+    a_node->left = node->left;
+    a_node->right = node->right;
+    
+    node->left->parent = a_node;
+    node->right->parent = a_node;
+
+    a_node->parent->left = a_node->right;
+    if(a_node->right != NULL)
+            a_node->right->parent = a_node->parent;
+
     if (node == tree->root)
     {
         tree->root = a_node;
-        a_node->left = node->left;
-        a_node->right = node->right;
-
-
-        node->left->parent = a_node;
-        node->right->parent = a_node;
-
-        a_node->parent->left = a_node->right;
-        if(a_node->right != NULL)
-            a_node->right->parent = a_node->parent;
+        a_node->parent = NULL;
         free(node);
-
         return;
     }
-
-
+    else 
+    {
+        if(node->parent->left == node)
+        {
+            node->parent->left = a_node;
+            a_node->parent = node->parent;
+        }
+        else{
+            node->parent->right = a_node;
+            a_node->parent = node->parent;
+        }
+        free(node);
+        return;
+    }  
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
