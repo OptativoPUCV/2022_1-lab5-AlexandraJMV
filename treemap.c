@@ -260,9 +260,11 @@ Pair * nextTreeMap(TreeMap * tree) {
     {
         next = minimum(tree->current->right);
     }
-    else if(tree->current->parent != NULL)
+    else 
     {
-        next = tree->current->parent;
+        if(tree->current->parent != NULL)
+            next = tree->current->parent;
+        next = NULL;
     }
 
     tree->current = next;
