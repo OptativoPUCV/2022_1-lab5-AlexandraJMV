@@ -245,7 +245,6 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 Pair * upperBound(TreeMap * tree, void* key) {
     TreeNode * ub_node;
-    int new_up = 0;
     int cont_left = 0;
     tree->current = tree->root;
 
@@ -262,24 +261,15 @@ Pair * upperBound(TreeMap * tree, void* key) {
         }
         else if (tree->lower_than(key, tree->current->pair->key) == 1 )
         {
-            new_up = (new_up-1)*(-1);
             cont_left ++;
-            if(tree->current->left == NULL) 
-            {
-                ub_node = tree->current;
-                break;
-            }
+            if(tree->current->left == NULL) break;
+            ub_node = tree->current;
             tree->current = tree->current->left;
         }
         else
         {
-            if(tree->current->right == NULL)
-            {
-                break;
-            }
+            if(tree->current->right == NULL) break;
             tree->current = tree->current->right;
-            if (new_up == 0)
-                ub_node = tree->current;
         }
     }
 
