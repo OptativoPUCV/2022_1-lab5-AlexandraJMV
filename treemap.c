@@ -52,9 +52,8 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
 
     while (tree->current != NULL)
     {
-        if(is_equal(tree, key, tree->current->pair->key) == 1)
+        if(is_equal(tree, key, tree->current->pair->key) == 0)
             return;
-
         if (tree->lower_than(key, tree->current->pair->key) == 1)
         {
             if (tree->current->left == NULL)
@@ -231,7 +230,6 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     {
         if (is_equal(tree, key, tree->current->pair->key) == 1)
             break;
-
         if (tree->lower_than(key, tree->current->pair->key) == 1 )
             tree->current = tree->current->left;
         else
@@ -269,6 +267,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
         {
             if(tree->current->right == NULL) break;
             tree->current = tree->current->right;
+
         }
     }
 
