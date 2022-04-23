@@ -283,8 +283,8 @@ Pair * upperBound(TreeMap * tree, void* key) {
         }
     }
 
-    if (cont_left == 0)
-        return NULL;
+    if (tree->lower_than(key, ub_node->pair->key) == 1)
+            return NULL:
     return ub_node->pair;
 }
 

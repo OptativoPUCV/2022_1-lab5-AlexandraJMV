@@ -501,3 +501,17 @@ sá., 23 de abr. de 2022 16:22:56:
  tests:  29|0
 total_score: 70/70
 b42ad24
+sá., 23 de abr. de 2022 16:24:21: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+treemap.c: In function 'upperBound':
+treemap.c:287:24: error: expected ';' before ':' token
+             return NULL:
+                        ^
+treemap.c:289:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+95fb8ab
