@@ -262,8 +262,11 @@ Pair * upperBound(TreeMap * tree, void* key) {
         else if (tree->lower_than(key, tree->current->pair->key) == 1 )
         {
             cont_left ++;
-            if(tree->current->left == NULL) break;
             ub_node = tree->current;
+            if(tree->current->left == NULL)
+            {
+                break;
+            }
             tree->current = tree->current->left;
         }
         else
