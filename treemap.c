@@ -248,8 +248,6 @@ Pair * upperBound(TreeMap * tree, void* key) {
     tree->current = tree->root;
 
     ub_node = NULL;
-    
-    if(tree->current == NULL) return NULL;
 
     while (tree->current != NULL)
     {
