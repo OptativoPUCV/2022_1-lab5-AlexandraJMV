@@ -119,11 +119,9 @@ void removeNode(TreeMap * tree, TreeNode* node) {
                  node->parent->left = NULL;
              else
                  node->parent->right = NULL;
-        free(node);
-        return;
     }
     //Nodo con un hijo
-    if (node->left == NULL || node->right == NULL)
+    else if (node->left == NULL || node->right == NULL)
     {
         if(node == tree->root)
         {
@@ -131,20 +129,14 @@ void removeNode(TreeMap * tree, TreeNode* node) {
             {
                 tree->root = node->left;
                 node->left->parent = NULL;
-                free(node);
-
-                return;
             }
-            if(node->right != NULL)
+            else
             {
                 tree->root = node->right;
                 node->right->parent = NULL;
-                free(node);
-
-                return;
             }
         }
-        if(node->parent->left == node)
+        else if(node->parent->left == node)
         {
             if(node->left != NULL)
             {
@@ -156,10 +148,9 @@ void removeNode(TreeMap * tree, TreeNode* node) {
                 node->parent->left = node->right;
                 node->right->parent = node->parent;
             }
-            free(node);
-            return;
+
         }
-        if(node->parent->right == node)
+        else
         {
             if(node->left != NULL)
             {
@@ -171,46 +162,41 @@ void removeNode(TreeMap * tree, TreeNode* node) {
                 node->parent->right = node->right;
                 node->right->parent = node->parent;
             }
-            free(node);
-
-            return;
         }
     }
-
-    //Nodo con mas hijos, paja.
-    a_node = minimum(node->right);
-
-    a_node->left = node->left;
-    a_node->right = node->right;
-    
-    node->left->parent = a_node;
-    node->right->parent = a_node;
-
-    a_node->parent->left = a_node->right;
-    if(a_node->right != NULL)
-            a_node->right->parent = a_node->parent;
-
-    if (node == tree->root)
+    else //Nodo con mas hijos.
     {
-        tree->root = a_node;
-        a_node->parent = NULL;
-        free(node);
-        return;
-    }
-    else 
-    {
-        if(node->parent->left == node)
+        a_node = minimum(node->right);
+
+        a_node->left = node->left;
+        a_node->right = node->right;
+        
+        node->left->parent = a_node;
+        node->right->parent = a_node;
+
+        a_node->parent->left = a_node->right;
+        if(a_node->right != NULL)
+                a_node->right->parent = a_node->parent;
+        if (node == tree->root)
         {
-            node->parent->left = a_node;
-            a_node->parent = node->parent;
+            tree->root = a_node;
+            a_node->parent = NULL;
         }
-        else{
-            node->parent->right = a_node;
-            a_node->parent = node->parent;
-        }
-        free(node);
-        return;
-    }  
+        else 
+        {
+            if(node->parent->left == node)
+            {
+                node->parent->left = a_node;
+                a_node->parent = node->parent;
+            }
+            else{
+                node->parent->right = a_node;
+                a_node->parent = node->parent;
+            }
+        }  
+    }
+    free(node);
+    return;
 }
 
 void eraseTreeMap(TreeMap * tree, void* key){
